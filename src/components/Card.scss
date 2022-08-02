@@ -1,0 +1,112 @@
+@import "../mixin/mixin.scss";
+
+.card {
+    position: relative;
+    flex: 1 1 185px;
+    aspect-ratio: 1/1;
+    text-align: center;
+    overflow: hidden;
+    opacity: 0;
+    animation: fade 1.2s forwards ease;
+
+    @include mobile {
+        flex: 1 1 150px;
+    }
+
+    &__bgr {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    &__bgr-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        transition: opacity .3s ease;
+    }
+
+    &__text {
+        color: #fff;
+        opacity: 0.7;
+        padding-top: 35px;
+    }
+
+    &__suptitle {
+        font-size: 18px;
+        font-weight: 100;
+        display: block;
+        margin-top: -2px;
+
+        &_top {
+            font-size: 16px;
+            margin: 0;
+        }
+    }
+
+    &__numbers {
+        font-size: 60px;
+        font-weight: bold;
+        padding-top: 16px;
+        line-height: 1;
+    }
+
+    &__year {
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.card:first-child {
+    animation-delay: 0.2s;
+    .card__bgr {
+        transform: rotate(180deg);
+    }
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.4s;
+    .card__bgr {
+        transform: rotate(-90deg);
+    }
+    .card__bgr-hover {
+        transform: rotate(90deg);
+    }
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.6s;
+    .card__bgr {
+        transform: rotate(90deg);
+    }
+    .card__bgr-hover {
+        transform: rotate(-90deg);
+    }
+}
+
+.card:last-child {
+    animation-delay: 0.8s;
+    .card__bgr-hover {
+        transform: rotate(180deg);
+    }
+}
+
+.card:hover {
+    .card__bgr-hover {
+        opacity: 1;
+    }
+}
