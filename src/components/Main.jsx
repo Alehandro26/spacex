@@ -3,11 +3,8 @@ import bgr from "../assets/images/main.png";
 import planet from "../assets/images/planet.png";
 import line from "../assets/images/фигура.png";
 import Card from "./Card";
-import { useState } from "react";
 
 function Main() {
-  const [count, setCount] = useState(0);
-
   return (
     <section className="main">
       <img src={bgr} alt="" className="main__bgr" />

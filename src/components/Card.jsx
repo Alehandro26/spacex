@@ -9,7 +9,7 @@ function Card({ topSubtitle, subtitle, numbers, year }) {
       <img src={imgHover} className="card__bgr-hover"></img>
       <div className="card__text">
         <span className="card__suptitle card__suptitle_top">{topSubtitle}</span>
-        <div className="card__numbers" data-target="10">
+        <div className="card__numbers">
           {numbers}
           {year && <span className="card__year">{year}</span>}
         </div>
